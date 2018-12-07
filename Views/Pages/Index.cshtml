@@ -60,19 +60,20 @@
 
         <div class="quadrado-competencias2"></div>
 
-        <section id="areadecomentarios">
+        <section class="areadecomentarios">
 
             @if (@ViewBag.UsuarioLogado != null) {
-            <h2 class="">@TempData["Mensagem"]</h2>
-            <h2 class="">Deixe seu comentário</h2>
 
-            <form id="" class="" action="/Comentario/Cadastrar" method="POST">
+            <h2>@TempData["Mensagem"]</h2>
+            <h2>Deixe seu comentário</h2>
+
+            <form class="textocomentario" action="/Comentario/Cadastrar" method="POST">
                 <h3>@ViewBag.UsuarioLogado,</h3>
                 <textarea class="" name="texto"></textarea>
 
                 <input type="hidden" name="id" value="@ViewBag.UsuarioId">
 
-                <button class="" type="submit">Comentar</button>
+                <button class="botaocomentario" type="submit">Comentar</button>
             </form>
 
             } 
