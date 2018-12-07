@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Check Point</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous"> @RenderSection("styles", required: false)
+</head>
+
+<!--Menu superior com links para páginas com home, dúvidas, cadastrar-->
+
+<body>
+    <header class="topo">
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="/Pages/Index">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Pages/SobreCarfel">Carfel</a>
+                </li>
+                <li>
+                    <a href="/Pages/Duvidas">Dúvidas</a>
+                </li>
+                <li>
+                    <a href="/Pages/Index/#planos">Planos</a>
+                </li>
+                <li>
+                    <a href="/Pages/Index/#areadecomentarios">Comente</a>
+                </li>
+                <li>
+                    <a href="/Usuario/Cadastrar">Cadastre-se</a>
+                </li>
+                <li>
+                    <a href="/Usuario/Login">
+                        <i class="fas fa-sign-in-alt"></i> Entrar</a>
+                </li>
+            </ul>
+        </div>
+        <!--Fim do menu-->
+
+        <!--Início do banner-->
+        <div class="banner">
+            <img class="logo" src='/Imagens/logo.png'>
+            <div class="banner-text">
+                <h1>Check Point</h1>
+                <h2>permite que seus colaboradores
+                    <br>trabalhem em equipe de qualquer lugar </h2>
+            </div>
+        </div>
+        <!--Fim do banner-->
+
+        <div class="quadrado-competencias2"></div>
+    </header>
+
+    @RenderBody()
+
+    <!--Início do menubaixo-->
+    <footer class="baixo">
+        <div class="menubaixo">
+            <ul>
+                <li>
+                    <h3>SAC@carfel.com.br</h3>
+                </li>
+                <li>
+                    <h2>Alameda Barão de Limeira, 539
+                        <BR> Santa Cecília | São Paulo
+                        <BR> CEP: 01202-001</h2>
+
+                </li>
+                <li>
+                    <h4>
+                        <a href="https://www.facebook.com/">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                        <a href="https://twitter.com/">
+                            <i class="fab fa-twitter-square"></i>
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.whatsapp.com/">
+                            <i class="fab fa-whatsapp-square"></i>
+                        </a>
+                    </h4>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <!--Fim do menubaixo-->
+
+</body>

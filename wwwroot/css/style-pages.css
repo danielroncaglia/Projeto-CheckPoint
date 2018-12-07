@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "lato";
+}
+body{
+    font-size: 16px;
+}
+
+/*Estilização da área de cadastro*/
+
+.cadastrar{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.cadastrar h1{
+    font-family: "roboto";
+    font-weight: bold;
+    font-size: 4em;
+    padding: 3%;
+}
+.cadastrar h2{
+    font-size: 1.5em;
+    padding: 1%;
+}
+.cadastrar-itens form{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+.cadastrar-itens {
+    display: flex;
+    justify-content: center;
+}
+.cadastrar-itens form > * {
+    padding: 1%;
+}
+.botao{
+    width: 200px;
+    border-radius: 10%;
+    color: white;
+    margin: auto;
+    background-color: rgb(29,182,218);
+    font-size: 1.5em;
+    margin-bottom: 5%;  
+}
+
+
+/*Estilização da área de login*/
+
+.logar{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.logar h1{
+    font-family: "roboto";
+    font-weight: bold;
+    font-size: 4em;
+    padding: 3%;
+}
+.logar h2{
+    font-size: 1.5em;
+    padding: 1%;
+}
+.logar-itens form{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+.logar-itens {
+    display: flex;
+    justify-content: center;
+}
+.logar-itens form > * {
+    padding: 1%;
+}
+.botao{
+    width: 200px;
+    border-radius: 10%;
+    color: white;
+    margin: auto;
+    background-color: rgb(29,182,218);
+    font-size: 1.5em;
+    margin-bottom: 5%;  
+}
+.logar-itens textarea{
+    border-radius: 5px;
+    border-color: black;
+}
+
+/*Estilização do FAQ*/
+
+.duvidas h1{
+    background-color: red;
+    font-family: "roboto";
+    width: 50%;
+    height: auto;
+    font-size: 6em;
+    color: white;
+    text-align: center;
+    margin: auto;
+    text-shadow: 0 0 3px #000;
+    font-weight: bold;
+}
+
+.duvidas p{
+    font-size: 1.5em;
+    text-align: center;
+    margin: auto;
+    padding: 0 0 3% 0;
+}
+
+IMG.duvida {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5% 1% 1% 1%;
+}
+
+/*Estilização com as perguntas*/
+
+#perguntas{
+    text-align: center;
+    margin: auto;
+    background: rgb(230,232,250);
+    padding: 10px 0 10px 0;
+}
+#perguntas h2{
+    font-size: 3em;
+    padding: 0 0 20px 0;
+}
+.perguntas-itens{
+    display: flex;
+    justify-content: space-around;
+}
+.perguntas-item{
+    max-width: 350px;
+}
+.perguntas-item h3{
+    font-size: 2em;
+}
+.perguntas-item p{
+    font-size: 1em;
+    text-align: justify;
+    padding: 0 0 50px 0;
+}
+
+
+/*Estilização do sobre*/
+
+.sobrecarfel h4{
+    font-size: 6em;
+    font-family: "roboto";
+    color: black;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+}
+
+.sobrecarfel h5{
+    font-size: 3em;
+    font-family: "roboto";
+    color: black;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+}
+
+.sobrecarfel p{
+    font-size: 1.5em;
+    text-align: center;
+    margin: auto;
+    padding: 0 0 3% 0;
+}
+
+IMG.fachada {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1% 1% 1% 1%;
+}
+
+/*Estilização história*/
+
+.historia-item{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.historiacarfel h1{
+    font-size: 3em;
+    text-align: center;
+    margin: auto;
+    font-family: "roboto";
+    font-weight: bold;
+    padding: 2%;
+}
+.historiacarfel p{
+    font-size: 1em;
+}
+.historia-item1{
+    flex: 2;
+    padding: 2%;
+}
+.historia-item2{
+    flex: 1;
+    padding: 2%
+}
+
+/*Estilização do videos*/
+
+.textovideo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.textovideo h1{
+    font-size: 3em;
+    font-family: "roboto";
+}
+.videocarfel{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+/*responsibilidade*/
+
+@media screen and (max-width:970px){
+    .cadastrar-itens form input[type="button"]{
+        width: 100%; 
+    }
+    .logar-itens form input[type="button"]{
+        width: 100%; 
+    }
+
+}

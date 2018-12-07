@@ -1,0 +1,140 @@
+@using Microsoft.AspNetCore.Http;
+  
+    @if(Context.Session.GetString("IdUsuario") == null){
+        Layout = "MasterPageDesLogado";
+} else {
+        Layout = "MasterPageLogado";
+    }
+}
+
+ @section styles {<link rel="stylesheet" href="/css/style-Index.css"> }
+
+
+<body>
+
+    <main>
+        <!--Início da funcionalidade-->
+        <div class="funcionalidade">
+            <p>Destinado às empresas, o programa Check Point funciona como um relógio de ponto virtual que possibilita o monitoramente
+                do trabalho feito à distância. Mais segurança para os colaboradores e mais eficiência para empresas
+            </p>
+        </div>
+        <!--Fim da funcionalidade-->
+
+        <div class="quadrado-competencias1"></div>
+
+        <!--Início dos planos-->
+        <section id="planos">
+            <h1>Planos Check Point</h1>
+            <div class="planos-item">
+                <article class="planos-itens">
+                    <h2>Experiência Grátis</h2>
+                    <ul>
+                        <li>Permite um usuário</li>
+                        <li>Conheça o software</li>
+                        <li>Funções básicas</li>
+                        <li>Converse com os consultores</li>
+                    </ul>
+                </article>
+                <article class="planos-itens">
+                    <h2>Profissional R$ 19,90</h2>
+                    <ul>
+                        <li>Equipes de até cinco pessoas</li>
+                        <li>Sofware completo</li>
+                        <li>Atendimento personalizado</li>
+                        <li>Help desk em até 24 horas</li>
+                    </ul>
+                </article>
+                <article class="planos-itens">
+                    <h2>Corporativo R$ 199,90</h2>
+                    <ul>
+                        <li>Uso ilimitado</li>
+                        <li>Versão avançada do software</li>
+                        <li>Atendimento personalizado</li>
+                        <li>Atendimento presencial</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <!--Fim dos planos-->
+
+        <div class="quadrado-competencias2"></div>
+
+        <section id="areadecomentarios">
+
+            @if (@ViewBag.UsuarioLogado != null) {
+            <h2 class="">@TempData["Mensagem"]</h2>
+            <h2 class="">Deixe seu comentário</h2>
+
+            <form id="" class="" action="/Comentario/Cadastrar" method="POST">
+                <h3>@ViewBag.UsuarioLogado,</h3>
+                <textarea class="" name="texto"></textarea>
+
+                <input type="hidden" name="id" value="@ViewBag.UsuarioId">
+
+                <button class="" type="submit">Comentar</button>
+            </form>
+
+            } 
+            
+            else {
+            <h2 class="">Comente</h2>
+
+            <form id="" class="">
+                <h3>Faça login para comentar</h3>
+                <textarea disabled class="" name="texto" placeholder="Faça login para comentar"></textarea>
+                <input type="button" onclick="location.href='/Usuario/Login';" class="" value="Entrar">
+            </form>
+            } 
+        </section>
+
+        <div class="quadrado-competencias1"></div>
+
+        <section id="" class="">
+            <h2>Comentários</h2>
+
+            <div class="">
+                @using Sistema.Models; 
+                @using System.Collections.Generic; 
+                @{ List<ComentarioModel> ComentariosAceitos = (List<ComentarioModel>) @ViewData["ComentariosAceitos"]; } 
+                        
+                        @if(ComentariosAceitos.Count == 0) {
+                        <div class="">
+                            <h3>Ainda não há comentários</h3>
+                        </div>
+                        } else { 
+                            foreach(ComentarioModel comentario in @ViewData["ComentariosAceitos"] as List<ComentarioModel>) {
+                            <div class="">
+                                <h3>@comentario.Usuario.Nome</h3>
+                                <h4>@comentario.DataCriacao<h4>
+                                <p>@comentario.Texto</p>
+                            </div>
+                            } }
+            </div>
+
+        </section>
+
+        <div class="quadrado-competencias2"></div>
+
+        <!--Início dos contatos-->
+        <section id="contatos">
+            <div class="contatos-itens">
+                <article class="contatos-item1">
+                    <h2>Fale conosco:
+                        <br>(11) 9286-1722</h2>
+                </article>
+                <article class="contatos-item2">
+                    <h3>
+                        <a href="file:///C:/Users/28725446827/Desktop/CARFEL/FAQ.html">Tire as dúvidas
+                            <BR>mais frequentes</a>
+                    </h3>
+                </article>
+            </div>
+        </section>
+        <!--Fim dos contatos-->
+
+    </main>
+
+</body>
+
+</html>

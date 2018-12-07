@@ -1,0 +1,88 @@
+@using Microsoft.AspNetCore.Http;
+  
+    @if(Context.Session.GetString("IdUsuario") == null){
+        Layout = "MasterPageDesLogado";
+} else {
+        Layout = "MasterPageLogado";
+    }
+}
+
+ @section styles {<link rel="stylesheet" href="/css/style-pages.css"> }
+
+    <main>
+
+        <!--Início da sobre-->
+        <div class="sobrecarfel">
+            <h4>CARFEL</h4>
+            <h5>Automação na gestão de projetos</h5>
+            <img class="fachada" src="/imagens/fachada.jpg">
+            <p>Fachada da sede da CARFEL no centro de cidade de São Paulo. Fonte: Google Maps</p>
+        </div>
+        <div class="imagemfachada">
+            <!--Fim da sobre-->
+
+            <div class="quadrado-competencias1"></div>
+
+            <!--Início do historia-->
+            <div class="historiacarfel">
+                <h1>História da CARFEL</h1>
+                <div class="historia-item">
+                    <div class="historia-item1">
+                        <p>A CARFEL é uma startup especializada em softwares que automotizam a gestão de projetos empresariais
+                            em especial para empresas da áreas de tecnologia. Fundada em 2016 por dois empresários da área
+                            de TI (Tecnologia da Informação), a CARFEL tem apresentado soluções ainda inéditas no mercado.
+                            <BR>
+                            <BR> A CARFEL conta com mais de 50 colaboradores que atuam na sua sede no centro de São Paulo e em
+                            diversas partes do mundo em colaboração feita de forma remota. A equipe é multidisciplinar contando
+                            com a presença de desenvolvedores, designers, analistas, engenheiros e especialistas em pesquisas,
+                            tecnologia e markeng.
+                            <BR>
+                            <BR> A missão da CARFEL é desenvolver soluções de qualidade que facilitem a vida dos nosso clientes,permitindo
+                            que possam conduzir seus negócios com eficiência reduzindo os seus custos com a gestão de projetos.
+                            <BR>
+                            <BR> A empresa tem estrutura para oferecer diversas soluções na área de TI. O diferencial é ter um
+                            atendimento personalisado para cada tipo de cliente focando na resolução de demandas de forma
+                            mais ágil e eficaz possível.
+                        </p>
+                    </div>
+                    <div class="historia-item2">
+                        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+                        <div style='overflow:hidden;height:440px;width:700px;'>
+                            <div id='gmap_canvas' style='height:440px;width:700px;'></div>
+                            <div>
+                                <small>
+                                    <a href="https://embedgooglemaps.com/it/">embedgooglemaps IT</a>
+                                </small>
+                            </div>
+                            <div>
+                                <small>
+                                    <a href="https://newyorkhoponhopoffbus.nl">newyork hoponhopoffbus</a>
+                                </small>
+                            </div>
+                            <style>
+                                #gmap_canvas img {
+                                    max-width: none !important;
+                                    background: none !important
+                                }
+                            </style>
+                        </div>
+                        <script type='text/javascript'>function init_map() { var myOptions = { zoom: 16, center: new google.maps.LatLng(-23.5365665, -46.6462884), mapTypeId: google.maps.MapTypeId.HYBRID }; map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(-23.5365665, -46.6462884) }); infowindow = new google.maps.InfoWindow({ content: '<strong>Sede da Carfel</strong><br>Alameda Barão de Limeira, 539<br>' }); google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
+                    </div>
+                </div>
+            </div>
+            <!--Fim do historia-->
+
+            <div class="quadrado-competencias2"></div>
+
+            <!--Início do video-->
+            
+            <div class="textovideo">
+                <h1>Assista como o Check Point funciona</h1>
+            </div>
+            <div class="videocarfel">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/oLLebBT9_LU?rel=0"></iframe>
+            </div>
+
+            <!--Fim do video-->
+
+    </main>

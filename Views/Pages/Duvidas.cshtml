@@ -1,0 +1,93 @@
+@using Microsoft.AspNetCore.Http;
+  
+    @if(Context.Session.GetString("IdUsuario") == null){
+        Layout = "MasterPageDesLogado";
+} else {
+        Layout = "MasterPageLogado";
+    }
+}
+
+ @section styles {<link rel="stylesheet" href="/css/style-pages.css"> }
+
+
+<main>
+
+    <!--Início da página sobre o Carfel-->
+    <div class="duvidas">
+        <h1>Tire as dúvidas mais frequentes</h1>
+        <img class="duvida" src="/imagens/tela-checkpoint.jpg">
+        <p>Tela inicial do Check Point</p>
+    </div>
+    <div class="imagemfachada">
+        <!--Fim da sobre-->
+
+        <div class="quadrado-competencias1"></div>
+
+        <!--Trecho com as perguntas-->
+        <section id="perguntas">
+            <h2>Perguntas mais frequentes</h2>
+            <div class="perguntas-itens">
+                <article class="perguntas-item">
+                    <h3>Como funciona?</h3>
+                    <BR>
+                    <p>A CARFEL é uma startup especializada em softwares que automotizam a gestão de projetos empresariais em
+                        especial para empresas da áreas de tecnologia. Fundada em 2016 por dois empresários da área de TI
+                        (Tecnologia da Informação), a CARFEL tem apresentado soluções ainda inéditas no mercado.
+                        <BR>
+                        <BR> A CARFEL conta com mais de 50 colaboradores que atuam na sua sede no centro de São Paulo e em diversas
+                        partes do mundo em colaboração feita de forma remota. A equipe é multidisciplinar contando com a
+                        presença de desenvolvedores, designers, analistas, engenheiros e especialistas em pesquisas, tecnologia
+                        e markeng.
+                        <BR>
+                        <BR> A missão da CARFEL é desenvolver soluções de qualidade que facilitem a vida dos nosso clientes,permitindo
+                        que possam conduzir seus negócios com eficiência reduzindo os seus custos com a gestão de projetos.
+                        <BR>
+                        <BR> A empresa tem estrutura para oferecer diversas soluções na área de TI. O diferencial é ter um atendimento
+                        personalisado para cada tipo de cliente focando na resolução de demandas de forma mais ágil e eficaz
+                        possível.
+                    </p>
+                </article>
+                <article class="perguntas-item">
+                    <h3>Para quem serve?</h3>
+                    <BR>
+                    <p>A CARFEL é uma startup especializada em softwares que automotizam a gestão de projetos empresariais em
+                        especial para empresas da áreas de tecnologia. Fundada em 2016 por dois empresários da área de TI
+                        (Tecnologia da Informação), a CARFEL tem apresentado soluções ainda inéditas no mercado.
+                        <BR>
+                        <BR> A CARFEL conta com mais de 50 colaboradores que atuam na sua sede no centro de São Paulo e em diversas
+                        partes do mundo em colaboração feita de forma remota. A equipe é multidisciplinar contando com a
+                        presença de desenvolvedores, designers, analistas, engenheiros e especialistas em pesquisas, tecnologia
+                        e markeng.
+                        <BR>
+                        <BR> A missão da CARFEL é desenvolver soluções de qualidade que facilitem a vida dos nosso clientes,permitindo
+                        que possam conduzir seus negócios com eficiência reduzindo os seus custos com a gestão de projetos.
+                        <BR>
+                        <BR> A empresa tem estrutura para oferecer diversas soluções na área de TI. O diferencial é ter um atendimento
+                        personalisado para cada tipo de cliente focando na resolução de demandas de forma mais ágil e eficaz
+                        possível.
+                    </p>
+                </article>
+                <article class="perguntas-item">
+                    <h3>E são os diferenciais?</h3>
+                    <BR>
+                    <p>A CARFEL é uma startup especializada em softwares que automotizam a gestão de projetos empresariais em
+                        especial para empresas da áreas de tecnologia. Fundada em 2016 por dois empresários da área de TI
+                        (Tecnologia da Informação), a CARFEL tem apresentado soluções ainda inéditas no mercado.
+                        <BR>
+                        <BR> A CARFEL conta com mais de 50 colaboradores que atuam na sua sede no centro de São Paulo e em diversas
+                        partes do mundo em colaboração feita de forma remota. A equipe é multidisciplinar contando com a
+                        presença de desenvolvedores, designers, analistas, engenheiros e especialistas em pesquisas, tecnologia
+                        e markeng.
+                        <BR>
+                        <BR> A missão da CARFEL é desenvolver soluções de qualidade que facilitem a vida dos nosso clientes,permitindo
+                        que possam conduzir seus negócios com eficiência reduzindo os seus custos com a gestão de projetos.
+                        <BR>
+                        <BR> A empresa tem estrutura para oferecer diversas soluções na área de TI. O diferencial é ter um atendimento
+                        personalisado para cada tipo de cliente focando na resolução de demandas de forma mais ágil e eficaz
+                        possível.
+                    </p>
+                </article>
+        </section>
+        <!--Fim do trecho sobre as competencias-->
+
+</main>

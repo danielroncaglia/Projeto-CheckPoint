@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "lato";
+}
+body{
+    font-size: 16px;
+}
+
+
+/*Estilização do banner superior*/
+
+.banner{
+    background: url('../Imagens/imagem-banner.jpg');
+    background-size: cover;
+    height: 400px;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 200px;
+
+}
+.banner-text{
+    color: white;
+    width: 50%;
+    text-align: left;
+    text-shadow: 5px 5px 5px 5px #000;
+    padding-left: 40px;
+}
+.banner-text h1{
+    font-size: 6em;
+    font-family: "roboto";
+    font-weight: 800px;
+}
+.banner-text h2{
+    font-size: 2em;
+    font-family: "roboto";
+    font-weight: bold;
+}
+.logo{
+    width: 200px;
+}
+
+/*Estilização das funcionalidades*/
+
+.funcionalidade p{
+    font-size: 1.8em;
+    font-family: "lato";
+    color: black;
+    text-align: justify;
+    padding: 2%;
+    width: 68%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Estilização de contatos*/
+
+#contatos{
+    text-align: center;
+    margin: auto;
+    padding: 20px 0 50px 0;
+}
+.contatos-itens{
+    display: flex;
+    padding: 2em;
+    justify-content: space-around;
+}
+.contatos-item1 h2{
+    font-size: 3em;
+    font-family: "roboto";
+    margin: auto;
+}
+
+.contatos-item2{
+    background-color: red;
+    width: 250px;
+    height: 200px;
+    border-radius: 20%;
+}
+.contatos-item2 h3 a{
+    font-size: 2em;
+    font-family: "roboto";
+    margin: auto;
+    color: white;
+    text-decoration: none;
+    
+}
+.contatos-item2 h3 a:hover{
+    color: yellow;
+    text-decoration-line: underline;
+}
+
+/*Estilização das funcionalidades*/
+
+.funcionalidade p{
+    font-size: 1.8em;
+    font-family: "lato";
+    color: black;
+    text-align: justify;
+    padding: 2%;
+    width: 68%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Estilização de contatos*/
+
+#contatos{
+    text-align: center;
+    margin: auto;
+    padding: 20px 0 50px 0;
+}
+.contatos-itens{
+    display: flex;
+    padding: 2em;
+    justify-content: space-around;
+}
+.contatos-item1 h2{
+    font-size: 3em;
+    font-family: "roboto";
+    margin: auto;
+}
+
+.contatos-item2{
+    background-color: red;
+    width: 250px;
+    height: 200px;
+    border-radius: 20%;
+}
+.contatos-item2 h3 a{
+    font-size: 2em;
+    font-family: "roboto";
+    margin: auto;
+    color: white;
+    text-decoration: none;
+    
+}
+.contatos-item2 h3 a:hover{
+    color: yellow;
+    text-decoration-line: underline;
+}
+
+/*Estilização dos planos*/
+
+#planos{
+    text-align: center;
+    margin: auto;
+    padding: 20px 0 50px 0;
+}
+.planos-item{
+    display: flex;
+    padding: 2em;
+    justify-content: space-around;
+}
+
+#planos h1{
+    font-size: 3em;
+    font-family: "roboto";
+    font-weight: bold;
+}
+.planos-itens {
+    background-color: rgb(29,182,218);
+    width: 450px;
+    height: 250px;
+    border-radius: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.planos-itens h2{
+    font-family: "roboto";
+    font-weight: 900;
+    font-size: 2.5em;
+    margin-bottom: 1.2em;
+    color: red;
+}
+.planos-itens li{
+    font-size: 1.5em;
+}
+.planos-itens ul{
+    list-style: none;
+}
+
+
+/*responsibilidade dos menu superior e inferior*/
+
+@media screen and (max-width:970px){
+    .menu{
+        height: 100%;
+    }
+    .menu ul{
+        flex-direction: column;
+        display: inline;
+        margin: 2%;
+    }
+    .banner{
+        background: url('../Imagens/imagem-banner.jpg');
+        background-size: cover;
+        height: 100%;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding-left: 200px;
+    }
+    .banner-text h1{
+        font-size: 3em;
+        font-family: "roboto";
+        font-weight: 800px;
+    }
+    .menubaixo {
+        height: auto;
+    }
+    .menubaixo ul{
+        display: inline;
+    }
+}

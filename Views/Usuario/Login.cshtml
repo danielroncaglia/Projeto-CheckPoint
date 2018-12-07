@@ -1,0 +1,35 @@
+@using Microsoft.AspNetCore.Http;
+  
+    @if(Context.Session.GetString("IdUsuario") == null){
+        Layout = "MasterPageDesLogado";
+} else {
+        Layout = "MasterPageLogado";
+    }
+}
+ 
+ @section styles {
+<link rel="stylesheet" href="/css/style-pages.css"> }
+
+<main>
+    <!--Área para login do usuário: email e senha-->
+
+    @TempData["Mensagem"]
+
+    <section class="logar">
+        <h1>Login no sistema Check Point</h1>
+        <div class="logar-itens">
+            <form action="/Usuario/Login" method="POST">
+                <h2>Email:</h2>
+                <input type="text" name="email" placeholder="Email" required maxlength="80" required="true">
+                <br>
+                <h2>Senha:</h2>
+                <input type="password" name="senha" placeholder="Senha" required maxlength="80" required="true">
+                <br>
+                <button class="botao" type="submit" value="Entrar">
+                <br>
+                <p>Não tem cadastro? <a href="/Usuario/Cadastrar">Clique aqui</a></p>
+            </form>
+        </div>
+    </section>
+    <!--fim da área de login-->
+</main>
