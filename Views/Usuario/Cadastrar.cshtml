@@ -1,34 +1,34 @@
-@using Microsoft.AspNetCore.Http;
-  
-    @if(Context.Session.GetString("IdUsuario") == null){
-        Layout = "MasterPageDesLogado";
-} else {
-        Layout = "MasterPageLogado";
-    }
-}
+    @using Microsoft.AspNetCore.Http;
+    
+        @if(Context.Session.GetString("IdUsuario") == null){
+            Layout = "MasterPageDesLogado";
+    } else {
+            Layout = "MasterPageLogado";
+        }
+    
 
- @section styles {<link rel="stylesheet" href="/css/style-pages.css"> }
+    @section styles {<link rel="stylesheet" href="/css/style-pages.css"> }
 
-<main>
-    <!--Área para cadastrar novos usuários: inputs de nome, email, login-->
-    <section class="cadastrar">
-        <h1>Cadastre-se no Check Point</h1>
-        <div class="cadastrar-itens">
-            <form action="/Usuario/Cadastrar" method="POST">
-                <p>@ViewBag.Mensagem</p>
-                <p>@TempData["Mensagem"]</p>
-                <h2>Nome:</h2>
-                <input type="text" name="nome" placeholder="Nome" required maxlength="80" required="true">
-                <br>
-                <h2>Email:</h2>
-                <input type="text" name="email" placeholder="Email" required maxlength="80" required="true">
-                <br>
-                <h2>Senha:</h2>
-                <input type="password" name="senha" placeholder="Senha" required maxlength="80" required="true">
-                <br>
-                <input class="botao" type="submit" value="Cadastrar">
-                <br>
-            </form>
-        </div>
-    </section>
-</main>
+    <main>
+        <!--Área para cadastrar novos usuários: inputs de nome, email, login-->
+        <section class="cadastrar">
+            <h1>Cadastre-se no Check Point</h1>
+            <div class="cadastrar-itens">
+                <form action="/Usuario/Cadastrar" method="POST">
+                    <p>@ViewBag.Mensagem</p>
+                    <p>@TempData["Mensagem"]</p>
+                    <h2>Nome:</h2>
+                    <input type="text" name="nome" placeholder="Nome" required maxlength="80" required="true">
+                    <br>
+                    <h2>Email:</h2>
+                    <input type="text" name="email" placeholder="Email" required maxlength="80" required="true">
+                    <br>
+                    <h2>Senha:</h2>
+                    <input type="password" name="senha" placeholder="Senha" required maxlength="80" required="true">
+                    <br>
+                    <input class="botao" type="submit" value="Cadastrar">
+                    <br>
+                </form>
+            </div>
+        </section>
+    </main>

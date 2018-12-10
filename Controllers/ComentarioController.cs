@@ -105,7 +105,7 @@ namespace Sistema.Controllers
 
             ViewBag.Mensagem = $"Status do comentário de Id '{comentarioModel.Id}' foi alterado com sucesso!";
 
-            return RedirectToAction("Aprovar");
+            return View();
         }
 
         [HttpGet]

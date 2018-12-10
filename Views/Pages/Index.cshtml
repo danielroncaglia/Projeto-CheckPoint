@@ -1,11 +1,13 @@
-@using Microsoft.AspNetCore.Http;
-  
+po@using Microsoft.AspNetCore.Http;
+@using Sistema.Models; 
+@using System.Collections.Generic; 
+
     @if(Context.Session.GetString("IdUsuario") == null){
         Layout = "MasterPageDesLogado";
 } else {
         Layout = "MasterPageLogado";
     }
-}
+
 
  @section styles {<link rel="stylesheet" href="/css/style-Index.css"> }
 
@@ -60,55 +62,59 @@
 
         <div class="quadrado-competencias2"></div>
 
-        <section class="areadecomentarios">
+            <section id="comentarios">
+                <div class="comentarios-itens">
 
-            @if (@ViewBag.UsuarioLogado != null) {
+                @if (@ViewBag.UsuarioLogado != null) {
 
-            <h2>@TempData["Mensagem"]</h2>
-            <h2>Deixe seu comentário</h2>
+                <h6>@TempData["Mensagem"]</h6>
+                <h6>O que você acha do Check Point?</h6>
+                <h6>@ViewBag.UsuarioLogado</h6>
+                <BR>
 
-            <form class="textocomentario" action="/Comentario/Cadastrar" method="POST">
-                <h3>@ViewBag.UsuarioLogado,</h3>
-                <textarea class="" name="texto"></textarea>
+                <form action="/Comentario/Cadastrar" method="POST">
 
-                <input type="hidden" name="id" value="@ViewBag.UsuarioId">
+                    <BR>
+                    <textarea class="areacomentario" name="texto"></textarea>
+                    <BR>
+                    <input type="hidden" name="id" value="@ViewBag.UsuarioId">
+                    <button class="botao"  type="submit">Comentar</button>
+                </form>
+                } else {
 
-                <button class="botaocomentario" type="submit">Comentar</button>
-            </form>
+                <h6>Faça login para comentar</h6>
 
-            } 
-            
-            else {
-            <h2 class="">Comente</h2>
-
-            <form id="" class="">
-                <h3>Faça login para comentar</h3>
-                <textarea disabled class="" name="texto" placeholder="Faça login para comentar"></textarea>
-                <input type="button" onclick="location.href='/Usuario/Login';" class="" value="Entrar">
-            </form>
-            } 
-        </section>
+                <form>
+                    <textarea class="areacomentario" disabled name="texto" ></textarea>
+                    <br>
+                    <input class="botao" type="button" onclick="location.href='/Usuario/Login';" value="Entrar">                </form>
+                } 
+                </div>
+            </section>
 
         <div class="quadrado-competencias1"></div>
 
-        <section id="" class="">
-            <h2>Comentários</h2>
+        <section id="comentados">
 
-            <div class="">
-                @using Sistema.Models; 
-                @using System.Collections.Generic; 
+            <h8>Veja o que pensam do programa</h8>
+
+            <div class="comentados-itens">
+
                 @{ List<ComentarioModel> ComentariosAceitos = (List<ComentarioModel>) @ViewData["ComentariosAceitos"]; } 
                         
                         @if(ComentariosAceitos.Count == 0) {
-                        <div class="">
-                            <h3>Ainda não há comentários</h3>
+                        <div>
+                            <h8>Ainda não há comentários</h8>
                         </div>
                         } else { 
                             foreach(ComentarioModel comentario in @ViewData["ComentariosAceitos"] as List<ComentarioModel>) {
-                            <div class="">
-                                <h3>@comentario.Usuario.Nome</h3>
-                                <h4>@comentario.DataCriacao<h4>
+                            <div>
+                                <h9>@comentario.Usuario.Nome</h9>
+                                
+                                <h9>@comentario.DataCriacao<h9>
+                                <BR>
                                 <p>@comentario.Texto</p>
+                                <BR>
                             </div>
                             } }
             </div>
@@ -126,7 +132,7 @@
                 </article>
                 <article class="contatos-item2">
                     <h3>
-                        <a href="file:///C:/Users/28725446827/Desktop/CARFEL/FAQ.html">Tire as dúvidas
+                        <a href="/Pages/Duvidas">Tire as dúvidas
                             <BR>mais frequentes</a>
                     </h3>
                 </article>
