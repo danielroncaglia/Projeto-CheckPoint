@@ -1,4 +1,4 @@
-po@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Http;
 @using Sistema.Models; 
 @using System.Collections.Generic; 
 
@@ -8,12 +8,9 @@ po@using Microsoft.AspNetCore.Http;
         Layout = "MasterPageLogado";
     }
 
-
  @section styles {<link rel="stylesheet" href="/css/style-Index.css"> }
 
-
 <body>
-
     <main>
         <!--Início da funcionalidade-->
         <div class="funcionalidade">
@@ -73,9 +70,9 @@ po@using Microsoft.AspNetCore.Http;
                 <BR>
 
                 <form action="/Comentario/Cadastrar" method="POST">
-
                     <BR>
                     <textarea class="areacomentario" name="texto"></textarea>
+                    <BR>
                     <BR>
                     <input type="hidden" name="id" value="@ViewBag.UsuarioId">
                     <button class="botao"  type="submit">Comentar</button>
@@ -83,10 +80,12 @@ po@using Microsoft.AspNetCore.Http;
                 } else {
 
                 <h6>Faça login para comentar</h6>
-
-                <form>
+                <BR>
+             <form>
+                    <BR>
                     <textarea class="areacomentario" disabled name="texto" ></textarea>
                     <br>
+                    <BR>
                     <input class="botao" type="button" onclick="location.href='/Usuario/Login';" value="Entrar">                </form>
                 } 
                 </div>
@@ -97,28 +96,21 @@ po@using Microsoft.AspNetCore.Http;
         <section id="comentados">
 
             <h8>Veja o que pensam do programa</h8>
-
-            <div class="comentados-itens">
+            <BR>
 
                 @{ List<ComentarioModel> ComentariosAceitos = (List<ComentarioModel>) @ViewData["ComentariosAceitos"]; } 
                         
                         @if(ComentariosAceitos.Count == 0) {
-                        <div>
+
                             <h8>Ainda não há comentários</h8>
-                        </div>
+
                         } else { 
                             foreach(ComentarioModel comentario in @ViewData["ComentariosAceitos"] as List<ComentarioModel>) {
-                            <div>
                                 <h9>@comentario.Usuario.Nome</h9>
-                                
-                                <h9>@comentario.DataCriacao<h9>
-                                <BR>
+                                <h9>@comentario.DataCriacao</h9>
                                 <p>@comentario.Texto</p>
                                 <BR>
-                            </div>
                             } }
-            </div>
-
         </section>
 
         <div class="quadrado-competencias2"></div>

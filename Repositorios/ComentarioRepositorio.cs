@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Sistema.Interfaces;
 using Sistema.Models;
 using System;
+using System.Linq;
 
 namespace Sistema.Repositorios
 {
@@ -90,7 +91,7 @@ namespace Sistema.Repositorios
                 }
             }
 
-            return comentariosEspecificos;
+            return comentariosEspecificos.OrderBy(x => x.DataCriacao).Reverse().ToList();
         }
 
     }

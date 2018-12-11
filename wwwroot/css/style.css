@@ -1,10 +1,11 @@
-    *{
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: "lato";
     }
-    body{
+
+    body {
         font-size: 16px;
     }
 
@@ -13,7 +14,7 @@
     .quadrado-competencias1 {
         height: 30px;
         margin: auto;
-        background-color: rgb(29,182,218);
+        background-color: rgb(29, 182, 218);
     }
 
     .quadrado-competencias2 {
@@ -25,35 +26,39 @@
     /*Estilização do menu superior*/
 
     .menu {
-        background-color: rgb(29,182,218);
+        background-color: rgb(29, 182, 218);
         height: 60px;
         width: auto;
         flex: 3;
     }
-    .menu ul{
+
+    .menu ul {
         list-style-type: none;
         display: flex;
         height: 100%;
         align-items: center;
     }
-    .menu ul li{
+
+    .menu ul li {
         flex: 1;
         text-align: center;
         font-size: 1.5em;
         font-family: "lato";
         font-weight: bold;
     }
-    .menu a{
+
+    .menu a {
         text-decoration: none;
         color: black;
     }
-    .menu a:hover{
+
+    .menu a:hover {
         color: yellow;
     }
 
     /*Estilização do banner superior*/
 
-    .banner{
+    .banner {
         background: url('../Imagens/imagem-banner.jpg');
         background-size: cover;
         height: 200px;
@@ -63,70 +68,79 @@
         justify-content: left;
         padding-left: 200px;
     }
-    .banner-text{
+
+    .banner-text {
         color: white;
         width: 50%;
         text-align: left;
         text-shadow: 5px 5px 5px 5px #000;
         padding-left: 40px;
     }
-    .banner-text h1{
+
+    .banner-text h1 {
         font-size: 4em;
         font-family: "roboto";
         font-weight: 800px;
     }
-    .banner-text h2{
+
+    .banner-text h2 {
         font-size: 1.5em;
         font-family: "roboto";
         font-weight: 800px;
     }
-    .logo{
+
+    .logo {
         width: 150px;
     }
 
     /*Estilização do menu baixo*/
 
     .menubaixo {
-        background-color: rgb(29,182,218);
+        background-color: rgb(29, 182, 218);
         height: 80px;
         width: auto;
         flex: 3;
         color: #000;
     }
-    .menubaixo ul{
+
+    .menubaixo ul {
         list-style-type: none;
         display: flex;
         height: 100%;
         align-items: center;
     }
-    .menubaixo ul li{
+
+    .menubaixo ul li {
         flex: 1;
         text-align: center;
     }
-    .menubaixo ul li h2{
+
+    .menubaixo ul li h2 {
         font-size: 1em;
     }
-    .menubaixo ul li h3{
+
+    .menubaixo ul li h3 {
         font-size: 1.5em;
         font-weight: bold;
     }
-    .menubaixo i{
+
+    .menubaixo i {
         font-size: 2em;
-        color:black;
+        color: black;
     }
 
     /*responsibilidade dos menu superior e inferior*/
 
-    @media screen and (max-width:1000px){
-        .menu{
+    @media screen and (max-width:1000px) {
+        .menu {
             height: 100%;
         }
-        .menu ul{
+        .menu ul {
             flex-direction: column;
             display: inline;
             margin: 2%;
         }
-        .banner{
+        .banner {
             background: url('../Imagens/imagem-banner.jpg');
             background-size: cover;
             height: 100%;
@@ -136,7 +150,7 @@
             justify-content: left;
             padding-left: 200px;
         }
-        .banner-text h1{
+        .banner-text h1 {
             font-size: 3em;
             font-family: "roboto";
             font-weight: 800px;
@@ -144,10 +158,10 @@
         .menubaixo {
             height: auto;
         }
-        .menubaixo ul{
+        .menubaixo ul {
             display: inline;
         }
-        .cadastrar-itens form input[type="button"]{
-            width: 100%; 
+        .cadastrar-itens form input[type="button"] {
+            width: 100%;
         }
     }

@@ -30,7 +30,7 @@ namespace Sistema.Controllers
                 usuario: usuario,
                 texto: form["texto"],
                 data: DateTime.Now,
-                situacao: Tipos.Recusado.ToString()
+                situacao: Tipos.Espera.ToString()
             );
 
             ComentarioRepositorio.Cadastrar(comentarioModel);
@@ -60,7 +60,7 @@ namespace Sistema.Controllers
 
                     ComentarioRepositorio comentarioRep = new ComentarioRepositorio();
 
-                    ViewData["ComentariosEmEspera"] = comentarioRep.ListarComentariosEspecifico(Tipos.Recusado.ToString());
+                    ViewData["ComentariosEmEspera"] = comentarioRep.ListarComentariosEspecifico(Tipos.Espera.ToString());
 
                     return View();
                 }
@@ -90,43 +90,39 @@ namespace Sistema.Controllers
             {
                 comentarioRep.Editar(Tipos.Aceito.ToString(), comentarioModel);
             }
-            else
+            else if (form["choice"] == "recusado")
             {
-                if (form["choice"] == "recusado")
-                {
-                    comentarioRep.Editar(Tipos.Recusado.ToString(), comentarioModel);
-                }
-                else
-                {
-                    ViewBag.Mensagem = "Inválido";
-                    return View();
-                }
+                comentarioRep.Editar(Tipos.Recusado.ToString(), comentarioModel);
             }
 
             ViewBag.Mensagem = $"Status do comentário de Id '{comentarioModel.Id}' foi alterado com sucesso!";
 
-            return View();
+            return RedirectToAction("Aprovar");
         }
 
         [HttpGet]
-        public IActionResult Listar () {
-            string id = HttpContext.Session.GetString ("IdUsuario");
+        public IActionResult Listar()
+        {
+            string id = HttpContext.Session.GetString("IdUsuario");
 
-            if (id != null) {
-                int idInt = int.Parse (id);
+            if (id != null)
+            {
+                int idInt = int.Parse(id);
 
-                UsuarioRepositorio usuarioRep = new UsuarioRepositorio ();
+                UsuarioRepositorio usuarioRep = new UsuarioRepositorio();
 
-                UsuarioModel usuario = usuarioRep.BuscarPorId (idInt);
+                UsuarioModel usuario = usuarioRep.BuscarPorId(idInt);
 
-                string[] nomes = usuario.Nome.Split (" ");
+                string[] nomes = usuario.Nome.Split(" ");
 
                 ViewBag.UsuarioLogado = nomes[0];
-                
-            } else {
+
+            }
+            else
+            {
                 ViewBag.UsuarioLogado = null;
             }
-            return View ();
+            return View();
         }
     }
 }

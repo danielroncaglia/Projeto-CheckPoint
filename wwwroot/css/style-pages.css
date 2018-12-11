@@ -1,104 +1,119 @@
-    *{
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: "lato";
     }
-    body{
+
+    body {
         font-size: 16px;
     }
 
     /*Estilização da área de cadastro*/
 
-    .cadastrar{
+    .cadastrar {
         display: flex;
         flex-direction: column;
         text-align: center;
     }
-    .cadastrar h1{
+
+    .cadastrar h1 {
         font-family: "roboto";
         font-weight: bold;
-        font-size: 4em;
+        font-size: 3em;
         padding: 3%;
     }
-    .cadastrar h2{
-        font-size: 1.5em;
+
+    .cadastrar h2 {
+        font-size: 1em;
         padding: 1%;
     }
-    .cadastrar-itens form{
+
+    .cadastrar-itens form {
+        font-size: 1.5em;
         display: flex;
         flex-direction: column;
         width: 25%;
     }
+
     .cadastrar-itens {
         display: flex;
         justify-content: center;
     }
-    .cadastrar-itens form > * {
+
+    .cadastrar-itens form>* {
         padding: 1%;
     }
-    .botao{
+
+    .botao {
         width: 200px;
         border-radius: 10%;
         color: white;
         margin: auto;
-        background-color: rgb(29,182,218);
-        font-size: 1.5em;
-        margin-bottom: 5%;  
+        background-color: rgb(29, 182, 218);
+        font-size: 1em;
+        margin-bottom: 5%;
     }
-
 
     /*Estilização da área de login*/
 
-    .logar{
+    .logar {
         display: flex;
         flex-direction: column;
         text-align: center;
     }
-    .logar h1{
+
+    .logar h1 {
         font-family: "roboto";
         font-weight: bold;
-        font-size: 4em;
+        font-size: 3em;
         padding: 3%;
     }
-    .logar h2{
-        font-size: 1.5em;
+
+    .logar h2 {
+        font-size: 1em;
         padding: 1%;
     }
-    .logar-itens form{
+
+    .logar-itens form {
+        font-size: 1.5em;
         display: flex;
         flex-direction: column;
         width: 25%;
     }
+
     .logar-itens {
         display: flex;
         justify-content: center;
     }
-    .logar-itens form > * {
+
+    .logar-itens form>* {
         padding: 1%;
     }
-    .logar botao{
+
+    .logar botao {
         width: 200px;
         border-radius: 10%;
         color: white;
         margin: auto;
-        background-color: rgb(29,182,218);
-        font-size: 1.5em;
-        margin-bottom: 5%;  
+        background-color: rgb(29, 182, 218);
+        font-size: 1em;
+        margin-bottom: 5%;
     }
-    .logar-itens textarea{
+
+    .logar-itens textarea {
         border-radius: 5px;
         border-color: black;
     }
 
     /*Estilização do FAQ*/
 
-    .duvidas h1{
+    .duvidas h1 {
         background-color: red;
         font-family: "roboto";
         width: 50%;
         height: auto;
-        font-size: 6em;
+        font-size: 4em;
         color: white;
         text-align: center;
         margin: auto;
@@ -106,8 +121,8 @@
         font-weight: bold;
     }
 
-    .duvidas p{
-        font-size: 1.5em;
+    .duvidas p {
+        font-size: 1em;
         text-align: center;
         margin: auto;
         width: 20%;
@@ -124,37 +139,49 @@
 
     /*Estilização com as perguntas*/
 
-    #perguntas{
+    #perguntas {
         text-align: center;
         margin: auto;
-        background: rgb(230,232,250);
+        background-color: lightcyan;
         padding: 10px 0 10px 0;
     }
-    #perguntas h2{
-        font-size: 3em;
+
+    #perguntas h2 {
+        font-size: 2em;
         padding: 0 0 20px 0;
     }
-    .perguntas-itens{
+
+    .perguntas-itens {
         display: flex;
         justify-content: space-around;
     }
-    .perguntas-item{
+
+    .perguntas-item {
         max-width: 350px;
     }
-    .perguntas-item h3{
+
+    .perguntas-item h3 {
         font-size: 2em;
     }
-    .perguntas-item p{
-        font-size: 1em;
-        text-align: justify;
-        padding: 0 0 50px 0;
-    }
 
+    .perguntas-item p {
+        font-size: 1.1em;
+        text-align: center;
+        padding: 1%;
+    }
 
     /*Estilização do sobre*/
 
-    .sobrecarfel h4{
-        font-size: 6em;
+    .sobrecarfel h1 {
+        font-size: 5em;
+        font-family: "roboto";
+        color: black;
+        text-align: center;
+        margin: auto;
+    }
+
+    .sobrecarfel h2 {
+        font-size: 2em;
         font-family: "roboto";
         color: black;
         text-align: center;
@@ -162,16 +189,7 @@
         font-weight: bold;
     }
 
-    .sobrecarfel h5{
-        font-size: 3em;
-        font-family: "roboto";
-        color: black;
-        text-align: center;
-        margin: auto;
-        font-weight: bold;
-    }
-
-    .sobrecarfel p{
+    .sobrecarfel p {
         font-size: 1.5em;
         text-align: center;
         margin: auto;
@@ -187,49 +205,45 @@
 
     /*Estilização história*/
 
-    .historia-item{
+    #historiacarfel {
+        text-align: center;
+        flex-direction: column;
         display: flex;
-        justify-content: center;
-        flex-direction: row;
+        align-items: center;
+        padding: 2%;
     }
 
-    .historiacarfel h9{
-        font-size: 3em;
-        text-align: center;
-        margin: auto;
+    #historiacarfel h3 {
+        font-size: 2em;
         font-family: "roboto";
         font-weight: bold;
-        padding: 2%;
+        padding: auto;
     }
-    .historiacarfel p{
-        font-size: 1em;
-    }
-    .historia-item1{
-        flex: 2;
-        padding: 2%;
-    }
-    .historia-item2{
-        flex: 1;
-        padding: 2%
+
+    #historiacarfel p {
+        font-size: 1.2em;
+        font-family: "lato";
+        max-width: 50%;
     }
 
     /*Estilização do videos*/
 
-    #videocarfel{
+    #videocarfel {
         text-align: center;
         flex-direction: column;
         display: flex;
         padding: 2em;
         align-items: center;
     }
-    #videocarfel h1{
-        font-size: 3em;
+
+    #videocarfel h4 {
+        font-size: 2em;
         font-family: "roboto";
     }
 
     /*Aprovar comentários*/
 
-    #aprovar{
+    #aprovar {
         text-align: center;
         flex-direction: column;
         display: flex;
@@ -238,34 +252,32 @@
         max-width: 500px;
         word-break: break-word;
     }
-    #aprovar h3{
-        font-size: 3em;
+
+    #aprovar h3 {
+        font-size: 2em;
         font-family: "roboto";
         font-weight: bold;
         padding: auto;
     }
-    #aprovar h4{
-        font-size: 1.5em;
-        font-family: "lato";
-    }
-    #aprovar p{
+
+    #aprovar h4 {
         font-size: 1em;
         font-family: "lato";
     }
 
-    .areacomentario{
-        width: 30%;
+    #aprovar p {
+        font-size: 0.8em;
+        font-family: "lato";
+        font-style: italic;
     }
-    
 
     /*responsibilidade*/
 
-    @media screen and (max-width:1000px){
-        .cadastrar-itens form input[type="button"]{
-            width: 100%; 
+    @media screen and (max-width:1000px) {
+        .cadastrar-itens form input[type="button"] {
+            width: 100%;
         }
-        .logar-itens form input[type="button"]{
-            width: 100%; 
+        .logar-itens form input[type="button"] {
+            width: 100%;
         }
-
     }

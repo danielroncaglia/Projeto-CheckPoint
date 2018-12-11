@@ -17,7 +17,9 @@ namespace Sistema.Repositorios
             if (File.Exists("usuarios.dat"))
             {
                 UsuariosSalvos = LerArquivoSerializado();
-            } else {
+            }
+            else
+            {
                 UsuariosSalvos = new List<UsuarioModel>();
                 UsuarioModel usuario = new UsuarioModel(
                     id: 1,
@@ -27,8 +29,8 @@ namespace Sistema.Repositorios
                     administrador: true
                 );
                 UsuariosSalvos.Add(usuario);
-                EscreverNoArquivo(); 
-                ListarUsuariosConsole(); 
+                EscreverNoArquivo();
+                ListarUsuariosConsole();
             }
         }
 
@@ -56,13 +58,13 @@ namespace Sistema.Repositorios
 
         public List<UsuarioModel> LerArquivoSerializado()
         {
-            byte[] bytesSerializados = File.ReadAllBytes ("usuarios.dat");
+            byte[] bytesSerializados = File.ReadAllBytes("usuarios.dat");
 
-            MemoryStream memoria = new MemoryStream (bytesSerializados);
+            MemoryStream memoria = new MemoryStream(bytesSerializados);
 
-            BinaryFormatter serializador = new BinaryFormatter ();
+            BinaryFormatter serializador = new BinaryFormatter();
 
-            return (List<UsuarioModel>) serializador.Deserialize (memoria);
+            return (List<UsuarioModel>)serializador.Deserialize(memoria);
         }
         public int ValidaUsuario(IFormCollection form)
         {
@@ -71,18 +73,20 @@ namespace Sistema.Repositorios
                 return 1;
             }
 
-            foreach(UsuarioModel user in UsuariosSalvos)
+            foreach (UsuarioModel user in UsuariosSalvos)
             {
                 if (form["email"] == user.Email)
                 {
-                    return 2; 
+                    return 2;
                 }
             }
 
             if (form["senha"] != form["confirmaSenha"])
             {
-                return 3; 
-            } else {
+                return 3;
+            }
+            else
+            {
                 string senha = form["senha"];
 
                 if (senha.Length < 6)
@@ -95,7 +99,7 @@ namespace Sistema.Repositorios
         }
         public UsuarioModel Login(string email, string senha)
         {
-            foreach(UsuarioModel usuario in UsuariosSalvos)
+            foreach (UsuarioModel usuario in UsuariosSalvos)
             {
                 if (usuario.Email == email && usuario.Senha == senha)
                 {
@@ -107,7 +111,7 @@ namespace Sistema.Repositorios
 
         public UsuarioModel BuscarPorId(int id)
         {
-            foreach(UsuarioModel usuario in UsuariosSalvos)
+            foreach (UsuarioModel usuario in UsuariosSalvos)
             {
                 if (id == usuario.Id)
                 {
@@ -120,7 +124,7 @@ namespace Sistema.Repositorios
 
         public void ListarUsuariosConsole()
         {
-            foreach(UsuarioModel user in UsuariosSalvos)
+            foreach (UsuarioModel user in UsuariosSalvos)
             {
                 System.Console.WriteLine(user);
             }

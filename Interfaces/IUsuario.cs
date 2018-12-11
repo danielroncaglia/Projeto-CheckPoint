@@ -4,7 +4,8 @@ using Sistema.Models;
 using System;
 
 namespace Sistema.Interfaces
-{    public interface IUsuario
+{
+    public interface IUsuario
     {
         UsuarioModel Cadastrar(UsuarioModel usuario);
         int ValidaUsuario(IFormCollection form);

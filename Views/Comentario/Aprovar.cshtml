@@ -1,50 +1,49 @@
-                            @if(@ViewBag.UsuarioLogado == null){
-                                Layout = "MasterPageDesLogado";
-                        } else {
-                                Layout = "MasterPageLogado";
-                            }
+@using Microsoft.AspNetCore.Http;
+@using Sistema.Models; 
+@using System.Collections.Generic;
+        
+        @if(Context.Session.GetString("IdUsuario") == null){
+            Layout = "MasterPageDesLogado";
+    } else {
+            Layout = "MasterPageLogado";
+        }
+    
+    @section styles {<link rel="stylesheet" href="/css/style-pages.css"> }
 
+<main>
 
-                        @section styles {<link rel="stylesheet" href="/css/style-pages.css"> }
+    <section id="aprovar">
+        <h3>@ViewBag.Mensagem</h3>
 
-                        <main>
+        @{ List
+        <ComentarioModel> ComentariosEmEspera = (List<ComentarioModel>) @ViewData["ComentariosEmEspera"]; } @if (ComentariosEmEspera.Count == 0) {
+                <h3>Não há comentários em espera</h3>
+                } else { foreach(ComentarioModel comentario in @ViewData["ComentariosEmEspera"] as List
+                <ComentarioModel>) {
+                    <form action="/Comentario/Aprovar" method="POST">
+                        <input type="hidden" name="commentId" value="@comentario.Id">
 
-                        @using Sistema.Models; 
-                        @using System.Collections.Generic; 
-                                
-                                <section id="aprovar">
-                                    <h3>@ViewBag.Mensagem</h3>
+                        <h4>@comentario.Usuario.Nome</h4>
+                        <h4>@comentario.DataCriacao</h4>
+                        <Br>
+                        <p>@comentario.Texto</p>
+                        <br>
+                        <label style="color:green">
+                            Aceitar
+                            <button type="submit" name="choice" value="aceito">
+                                <i class="fas fa-thumbs-up"></i>
+                            </button>
+                        </label>
 
-                                        @{
-                                            List<ComentarioModel> ComentariosEmEspera = (List<ComentarioModel>) @ViewData["ComentariosEmEspera"];
-                                        }
-
-                                        @if (ComentariosEmEspera.Count == 0)
-                                        {
-                                                <h3>Não há comentários em espera</h3>
-                                        } else {
-                                            foreach(ComentarioModel comentario in @ViewData["ComentariosEmEspera"] as List<ComentarioModel>)
-                                            {
-                                                <form action="/Comentario/Aprovar" method="POST">
-                                                    <input type="hidden" name="commentId" value="@comentario.Id">
-
-                                                    <h4>@comentario.Usuario.Nome</h4>
-                                                    <h4>@comentario.DataCriacao</h4>
-                                                    <p>@comentario.Texto</p>
-                                                   
-                                                <label style="color:green">
-                                                    Aceitar
-                                                    <button type="submit" name="choice" value="aceito"><i class="fas fa-thumbs-up"></i></button>
-                                                </label>
-
-                                                <label style="color:red">
-                                                    Recusar
-                                                    <button type="submit" name="choice" value="recusado"><i class="fas fa-thumbs-down"></i></button>
-                                                </label>
-                                                <BR>
-                                                <BR>
-                                            </form>
-                                            }
-                                        }
-                                </section>
-                        </main>
+                        <label style="color:red">
+                            Recusar
+                            <button type="submit" name="choice" value="recusado">
+                                <i class="fas fa-thumbs-down"></i>
+                            </button>
+                        </label>
+                        <BR>
+                        <BR>
+                    </form>
+                    } }
+    </section>
+</main>
